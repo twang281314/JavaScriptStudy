@@ -1,0 +1,23 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "node.js",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://twang281314|bnm6714420@github.com/twang281314/NodeStudy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twang281314/NodeStudy/issues"
+  },
+  "homepage": "https://github.com/twang281314/NodeStudy#readme"
+}
