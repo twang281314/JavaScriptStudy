@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Bootstrap CSS -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Angular -->
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+    <!-- UI-Router -->
+    <script src="http://cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <!-- App Script -->
+    <script src="app.js"></script>
+
+    <body class="container">
+
+        <div ng-controller="ParentCtrl"> 
+            <div ng-controller="SelfCtrl"> 
+                <a ng-click="click()">click me</a>
+                <div ng-controller="ChildCtrl"></div>
+            </div>
+            <div ng-controller="BroCtrl"></div>
+        </div>
+
+    </body>
+
+</html>
