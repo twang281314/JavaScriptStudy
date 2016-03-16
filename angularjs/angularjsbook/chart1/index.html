@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Bootstrap CSS -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Angular -->
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+    <!-- UI-Router -->
+    <script src="http://cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <!-- App Script -->
+
+
+    <script>
+        var app = angular.module("app", []);
+        app.controller('MainController', function($scope) {
+            $scope.youCheckedit=true;
+            $scope.click= function(){
+                console.log($scope.youCheckedit);
+            }
+            
+            change = function(oldValue,newValue,msg){
+                console.log(oldValue);
+                console.log(newValue);
+                console.log(msg);
+            }
+            
+            $scope.$watch('name',change);
+        });
+    </script>
+
+    <body class="container">
+
+        <div ng-controller="MainController">
+            <input type="checkbox" ng-model="youCheckedit" ng-click="click()">
+            <input type="text" ng-model="name" ng-change="change()"><br>
+            输出：<address ng-bind="name"></address>
+        </div>
+      
+    </body>
+
+</html>

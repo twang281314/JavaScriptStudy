@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Bootstrap CSS -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Angular -->
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+    <!-- UI-Router -->
+    <script src="http://cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <!-- App Script -->
+
+
+    <script>
+        var app = angular.module('myapp', []);
+        
+        app.controller('MainCtrl', function($scope) {
+           
+        });
+        app.directive('helloWorld', function() {
+            return {
+                restrict: 'AE',
+                replace: true,
+                template: '<p style="background-color:{{color}}">Hello World</p>',
+                link: function(scope, elem, attrs) {
+                    elem.bind('click', function() {
+                        elem.css('background-color', 'red');
+                        scope.$apply(function() {
+                            scope.color = "red";
+                        });
+                    });
+                    elem.bind('mouseover', function() {
+                        elem.css('cursor', 'pointer');
+                    });
+                }
+            };
+        });
+    </script>
+
+    <body class="container">
+
+        <body ng-controller="MainCtrl">
+            <input type="text" ng-model="color" placeholder="Enter a color" />
+            <hello-world/>
+        </body>
+
+    </body>
+
+</html>
