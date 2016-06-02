@@ -23,25 +23,20 @@
             $scope.click= function(){
                 console.log($scope.youCheckedit);
             }
-            
             change = function(oldValue,newValue,msg){
                 console.log(oldValue);
                 console.log(newValue);
                 console.log(msg);
             }
-            
             $scope.$watch('name',change);
         });
     </script>
 
     <body class="container">
-
         <div ng-controller="MainController">
             <input type="checkbox" ng-model="youCheckedit" ng-click="click()">
             <input type="text" ng-model="name" ng-change="change()"><br>
             输出：<address ng-bind="name"></address>
         </div>
-      
     </body>
-
 </html>
