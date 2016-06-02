@@ -221,7 +221,9 @@ app.directive('innerDirective', function() {
 相应的HTML代码如下：
 
 ``` html
-相应的HTML代码如下：
+<outer-directive>
+  <inner-directive></inner-directive>
+</outer-directive>
 ```
 
 require: ‘^outerDirective’ 告诉Angular在元素以及它的父元素中搜索controller。这样被找到的 controller 实例会作为第四个参数被传入到 link 函数中。在我们的例子中，我们将嵌入的指令的scope发送给父亲指令。如果你想尝试这个代码的话，请在开启浏览器控制台的情况下打开这个Plunker。同时，这篇Angular官方文档上的最后部分给了一个非常好的关于指令交互的例子，是非常值得一读的。
